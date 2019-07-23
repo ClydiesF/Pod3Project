@@ -6,9 +6,12 @@ CREATE TABLE roles
 
 CREATE TABLE users
 (
-    id SERIAL NOT NULL PRIMARY KEY,
-    password VARCHAR(255),
-    username VARCHAR(255) UNIQUE
+  id SERIAL NOT NULL PRIMARY KEY,
+  username VARCHAR(255) UNIQUE,
+  password VARCHAR(255),
+  is_bar_owner BOOLEAN DEFAULT FALSE,
+  reviews_liked_disliked INTEGER REFERENCES reviews(id),
+  user_pic VARCHAR(255)
 );
 
 CREATE TABLE users_roles
