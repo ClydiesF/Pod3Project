@@ -32,6 +32,13 @@ public class User {
 
   private String password;
 
+
+  @Column(name="is_bar_owner")
+  private Boolean isBarOwner;
+
+  @Column(name="user_pic")
+  private String userPic;
+
   @ManyToMany
   @JoinTable(name="users_roles",
     joinColumns=
