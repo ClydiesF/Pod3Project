@@ -22,10 +22,8 @@ import lombok.Setter;
 public class User {
 
   @Id
-  @SequenceGenerator(name = "user_generator",
-      sequenceName = "users_id_seq", allocationSize = 1)
-  @GeneratedValue(strategy = GenerationType.SEQUENCE,
-      generator = "user_generator")
+  @SequenceGenerator(name = "user_generator", sequenceName = "users_id_seq", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
   @Column(name = "id", nullable = false, unique = true)
   private Integer id;
 
@@ -33,6 +31,13 @@ public class User {
   private String username;
 
   private String password;
+
+//  additional add to correlate to the  new schema.- Clyde
+   @Column(name="is_bar_owner")
+  private Boolean isBarOwner;
+
+  @Column(name="user_pic")
+  private String userPic;
 
   @ManyToMany
   @JoinTable(name="users_roles",
