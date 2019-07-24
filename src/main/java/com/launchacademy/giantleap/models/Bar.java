@@ -30,19 +30,19 @@ public class Bar {
   @Column(name="id", nullable=false, unique=true)
   private Integer id;
 
-  @Column(name="bar_name")
+  @Column(name="bar_name", nullable=false)
   private String barName;
 
   @Column
   private String description;
 
-  @Column
+  @Column(nullable=false)
   private String location;
 
   @Column(name="has_beach")
-  private Boolean has_beach;
+  private Boolean hasBeach;
 
-  @Column(name="bar_owner_id")
+  @Column(name="bar_owner_id", nullable=false)
   private Integer BarOwnerId;
 
   @JsonManagedReference

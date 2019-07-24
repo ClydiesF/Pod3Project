@@ -28,5 +28,4 @@ public class ReviewRestController {
   public Optional<Review> getOne(@PathVariable Integer id) {
     return reviewRepo.findById(id);
   }
-
 }
