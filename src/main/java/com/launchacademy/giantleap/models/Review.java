@@ -27,7 +27,7 @@ public class Review {
   @Column(name="id", nullable=false, unique=true)
   private Integer id;
 
-  @Column
+  @Column(nullable=false)
   private Integer rating;
 
   @Column
