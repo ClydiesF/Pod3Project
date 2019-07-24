@@ -32,7 +32,6 @@ public class User {
 
   private String password;
 
-
   @Column(name="is_bar_owner")
   private Boolean isBarOwner;
 
