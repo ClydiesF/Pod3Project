@@ -32,7 +32,12 @@ public class User {
 
   private String password;
 
+<<<<<<< HEAD
   @Column(name="is_bar_owner")
+=======
+//  additional add to correlate to the  new schema.- Clyde
+   @Column(name="is_bar_owner")
+>>>>>>> e7d0616e657925b711ea62f04f96fb2124880b72
   private Boolean isBarOwner;
 
   @Column(name="user_pic")
