@@ -16,5 +16,7 @@ CREATE TABLE reviews
   comment TEXT,
   like_count INTEGER,
   dislike_count INTEGER,
+  reviewer_id INTEGER NOT NULL REFERENCES users(id),
   bar_id INTEGER NOT NULL REFERENCES bars(id)
 );
+
