@@ -10,7 +10,6 @@ CREATE TABLE users
   username VARCHAR(255) UNIQUE,
   password VARCHAR(255),
   is_bar_owner BOOLEAN DEFAULT FALSE,
-  reviews_liked_disliked INTEGER REFERENCES reviews(id),
   user_pic VARCHAR(255)
 );
 
