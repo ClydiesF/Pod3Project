@@ -2,7 +2,7 @@ CREATE TABLE bars
 (
   id SERIAL NOT NULL PRIMARY KEY,
   bar_name VARCHAR(255) NOT NULL,
-  description TEXT,
+  description TEXT NOT NULL,
   location VARCHAR(255) NOT NULL,
   has_beach BOOLEAN DEFAULT FALSE,
   bar_owner_id INTEGER NOT NULL REFERENCES users(id)

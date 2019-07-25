@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation-float.css" integrity="sha256-h9i8L1eVkaZg4vi/+f+jUUbAulAo9wnQwZtoFHoaUEY=" crossorigin="anonymous" />
+  <title>Bars N Beaches</title>
+</head>
+
+<body style="margin:1rem; padding:1rem">
+<h1>Submit a New Bar</h1>
+
+<hr>
+<form action="#" th:action="@{/newBar}" th:object="${bar}" method="POST">
+  <div>
+    <label for="barName">Bar Name</label>
+    <input type="text" id="barName" name="barName" th:value="${barName}"/>
+  </div>
+  <br>
+  <div>
+    <label for="description">Description</label>
+    <input type="text" id="description" th:field="*{description}" th:value="*{description}"/>
+  </div>
+  <br>
+  <div>
+    <label for="location">Location</label>
+    <textarea type="text" id="location" th:field="*{location}" th:value="*{location}"/>
+  </div>
+  <br>
+  <div>
+    <label>Is it near a beach?</label>
+    <select typeof="text" name="hasBeach" th:value="*{hasBeach}" class="form-control">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+  <br>
+  <div>
+    <input type="submit" value="Submit" />
+  </div>
+</form>
+
+</body>
+</html>

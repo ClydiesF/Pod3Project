@@ -11,15 +11,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
-@Entity
-@Table(name="reviews")
+@Component
 @Getter
 @Setter
-@NoArgsConstructor
-
+@Entity
+@Table(name = "reviews")
 public class Review {
   @Id
   @SequenceGenerator(name="review_generator", sequenceName="reviews_id_seq", allocationSize = 1)
@@ -27,10 +26,10 @@ public class Review {
   @Column(name="id", nullable=false, unique=true)
   private Integer id;
 
-  @Column(nullable=false)
+  @Column(name="rating", nullable=false)
   private Integer rating;
 
-  @Column
+  @Column(name="comment")
   private String comment;
 
   @Column(name="like_count")
@@ -39,14 +38,13 @@ public class Review {
   @Column(name="dislike_count")
   private Integer dislikeCount;
 
-  @Column(name="reviewer_id")
-  private Integer reviewerId;
-
-  @Column(name="bar_id", nullable=false, insertable=false, updatable=false)
-  private Integer barId;
+  @JsonBackReference
+  @ManyToOne
+  @JoinColumn(name ="bar_id")
+  private Bar bar;
 
   @JsonBackReference
   @ManyToOne
-  @JoinColumn(name="bar_id", nullable=false)
-  private Bar bar;
+  @JoinColumn(name ="reviewer_id")
+  private User reviewer;
 }
