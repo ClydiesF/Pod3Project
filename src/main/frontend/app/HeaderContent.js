@@ -15,12 +15,9 @@ export default class HeaderContent extends Component {
                         <a href="#">Log-in</a>
                     </div>
                 </div>
-
                 <div className="img">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB6v8Fil2I6UU0EpqoKkoBLcy-QIjO-1k_l-Bh-oirQ76vkAex" alt="BNB logo"/>
                 </div>
-
-
                 <div className="search-bar">
                     <div className="title">Find</div>
                     <input type="text" placeholder="Enter a bar | ...near a beach"></input>
