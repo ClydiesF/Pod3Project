@@ -30,6 +30,18 @@
       <input type="text" name="userPic" th:value="*{userPic}" class="form-control" placeholder="Enter Image URL to page" />
     </div>
     <br>
+    <div>
+    <label>Are You an Owner?</label>
+    <select typeof="text" name="isBarOwner" th:value="*{isBarOwner}" class="form-control">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+    </div>
+    <div>
+      <label>Please enter a image URL</label>
+      <input type="text" name="userPic" th:value="*{userPic}" class="form-control" placeholder="Enter Image URL to page" />
+
+    </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
   </form>
 </main>
