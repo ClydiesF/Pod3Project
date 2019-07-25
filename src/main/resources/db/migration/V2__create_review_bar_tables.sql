@@ -1,3 +1,4 @@
+
 CREATE TABLE bars
 (
   id SERIAL NOT NULL PRIMARY KEY,
@@ -18,3 +19,4 @@ CREATE TABLE reviews
   reviewer_id INTEGER NOT NULL REFERENCES users(id),
   bar_id INTEGER NOT NULL REFERENCES bars(id)
 );
+
