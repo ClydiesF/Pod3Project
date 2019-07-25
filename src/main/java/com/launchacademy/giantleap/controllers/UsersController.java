@@ -51,7 +51,7 @@ public class UsersController {
     }
     userService.save(userForm);
     securityService.autoLogin(userForm.getUsername(), userForm.getPassword());
-    return "redirect:/welcome/" + userForm.getId();
+    return "redirect:/welcome";
   }
 
   @GetMapping("/login")
@@ -68,14 +68,12 @@ public class UsersController {
   @PostMapping("/login")
   public String userLogin(@ModelAttribute User userLogin, Model model, @RequestParam("username") String username) {
     User user = userRepo.findByUsername(username);
-    System.out.println(user);
     securityService.autoLogin(user.getUsername(), user.getPassword());
     return "redirect:/welcome";
   }
 
   @GetMapping({"/welcome"})
   public String welcome(Model model, @AuthenticationPrincipal UserDetails currentUser) {
-
     User user = userRepo.findByUsername(currentUser.getUsername());
     model.addAttribute("username", user.getUsername());
     model.addAttribute("userId", user.getId());
