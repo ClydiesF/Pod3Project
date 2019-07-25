@@ -38,10 +38,21 @@ public class BarController {
 
   @PostMapping("/newBar")
   public String createBar(@ModelAttribute Bar bar, @AuthenticationPrincipal UserDetails currentUser, Model model) {
+    if(currentUser == null){
+      return "redirect:/registration";
+    }
+
     User user = userRepo.findByUsername(currentUser.getUsername());
-    bar.setBarOwner(user);
-    barRepo.save(bar);
-    return "redirect:/welcome";
+
+    if(!user.getIsBarOwner()){
+      model.addAttribute("error", true);
+      return "bars/new";
+    }else{
+      bar.setBarOwner(user);
+      barRepo.save(bar);
+      return "redirect:/welcome";
+    }
+
   }
 
 }

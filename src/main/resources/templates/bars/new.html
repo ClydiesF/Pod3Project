@@ -7,7 +7,7 @@
 
 <body style="margin:1rem; padding:1rem">
 <h1>Submit a New Bar</h1>
-
+<p th:if="${error}" class="callout alert">You have to be registered as a Bar Owner to add a Bar</p>
 <hr>
 <form action="#" th:action="@{/newBar}" th:object="${bar}" method="POST">
   <div>
@@ -17,12 +17,12 @@
   <br>
   <div>
     <label for="description">Description</label>
-    <input type="text" id="description" th:field="*{description}" th:value="*{description}"/>
+    <textarea type="text" id="description" th:field="*{description}" th:value="*{description}"/>
   </div>
   <br>
   <div>
     <label for="location">Location</label>
-    <textarea type="text" id="location" th:field="*{location}" th:value="*{location}"/>
+    <input type="text" id="location" th:field="*{location}" th:value="*{location}"/>
   </div>
   <br>
   <div>
