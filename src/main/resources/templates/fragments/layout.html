@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:fragment="layout (template)">
+  <head>
+    <title>Bars and Beaches</title>
+    <script src="https://kit.fontawesome.com/01632f5a57.js"></script>
+  </head>
+  <body>
+    <th:block th:include="${template}"/>
+    <script src="/bundle.js"></script>
+  </body>
+</html>

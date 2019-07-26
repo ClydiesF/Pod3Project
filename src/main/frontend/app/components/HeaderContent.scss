@@ -1,23 +1,17 @@
-
-
 .HeaderContent {
     // background-image: url("./assets/bar-image.jpeg");
     // background-size: cover;
    width: 100%;
    background-color: whitesmoke;
    height: 500px;
-  
 }
-
-
 
 .nav {
 display: flex; 
-
 justify-content: flex-end;
 align-items: center;
+}
 
-} 
 .nav p {
     font-size: 12px;
     font-weight: bolder;
@@ -31,7 +25,6 @@ align-items: center;
     border-radius: 5px;
    transition: all;
    transition: ease-in;
-
 }
 
 .links:nth-child(2) {
@@ -44,10 +37,10 @@ align-items: center;
     color:maroon;
     font-size: 12px;
 }
+
 .links:hover {
     transition: 1.5s;
     border: solid 2px lightskyblue;
-
 }
 
 .img {
@@ -55,15 +48,17 @@ align-items: center;
     text-align: center;
     transition: all;
 }
+
 .img img:hover {
     transition: 1s;
     cursor: pointer;
 }
-.img img{
-width: 100px;
-height: 100px;
-border-radius: 50%;
-border:solid 2px white;
+
+.img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border:solid 2px white;
 }
 
 .search-bar {
@@ -76,9 +71,8 @@ border:solid 2px white;
     border-radius: 5px;
     background-color: white;
     overflow: hidden;
-    
+}
 
-} 
 .title {
     display: flex;
     justify-content: center;
@@ -87,19 +81,19 @@ border:solid 2px white;
     font-weight: bold;
     color: darkgray;
 }
+
 .search-bar input {
     width:80%;
     border: none;
 }
 
-::placeholder{
+::placeholder {
     color: grey;
     font-size: 13px;
     font-weight: 500;
     opacity: .5;
     font-style: italic;
     text-align: center;
-    
 }
 
 .search-icon-box {
@@ -109,8 +103,8 @@ border:solid 2px white;
     background-color:maroon;
     width: 10%;
     height: 30px;
-
 }
+
 .fa-search {
     color:white;
 }
@@ -119,22 +113,21 @@ h6 {
     text-align: center;
     margin: 5px;
 }
+
 .category {
     display: flex;
     justify-content: center;
     padding: 0px;
-margin-bottom: 100px;
-    
-
+    margin-bottom: 100px;
 }
+
 .category p {
     font-size: 10px;
     margin-right: 10px;
     font-weight: bold;
-   
     color: black;
 }
+
 hr {
     width: 90%;
 }
-
