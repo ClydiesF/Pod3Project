@@ -11,7 +11,7 @@ class BarShowContainer extends Component {
   }
 
   componentDidMount() {
-    // let selectedBarId = this.props.params.id
+    //we will implement ways to address ids that don't exist
     let pathArray = window.location.pathname.split('/');
     let barId = pathArray[pathArray.length-1];
     fetch(`/api/v1/bars/${barId}`)
@@ -27,11 +27,9 @@ class BarShowContainer extends Component {
   render() {
     let reviewsArray = this.state.reviews.map(review => {
       return(
-        <div>
-          <li>
-            {review.rating} - {review.comment}
-          </li>
-        </div>
+        <li>
+          {review.rating} - {review.comment}
+        </li>
       )
     })
 

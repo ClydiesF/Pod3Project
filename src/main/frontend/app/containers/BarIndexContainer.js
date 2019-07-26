@@ -19,18 +19,7 @@ class BarIndexContainer extends Component {
       this.setState( {bars: bars} )
     })
   }
-
-  // render() {
-  //   let barsArray = this.state.bars.map(bar => {
-  //     return(
-  //       <div>
-  //         <li>
-  //           {bar.barName} in {bar.location}
-  //         </li>
-  //       </div>
-  //     )
-  //   })
-
+  
     render() {
       let barsArray = this.state.bars.map(bar => {
         return(

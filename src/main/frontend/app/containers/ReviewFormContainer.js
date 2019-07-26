@@ -34,6 +34,7 @@ handleSubmit(event) {
   event.preventDefault()
   let hasErrors = false
   if(this.state.comment.trim() === "") {
+    //we are considering other ways to validate data in the form
     alert("Please enter a comment.")
     hasErrors = true
   }

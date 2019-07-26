@@ -21,11 +21,9 @@ class ReviewIndexContainer extends Component {
   render() {
     let reviewsArray = this.state.reviews.map(review => {
       return(
-        <div>
-          <li>
-            {review.barId}: {review.rating} - {review.comment} (Reviewer: {review.reviewerId})
-          </li>
-        </div>
+        <li>
+          {review.barId}: {review.rating} - {review.comment} (Reviewer: {review.reviewerId})
+        </li>
       )
     })
 
