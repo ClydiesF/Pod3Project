@@ -1,35 +1,32 @@
+// import React from "react";
+// import ReactDom from "react-dom";
+//
+// import App from './App'
+// import BarIndexContainer from './containers/BarIndexContainer'
+// import BarShowContainer from './containers/BarShowContainer'
+// import ReviewIndexContainer from './containers/ReviewIndexContainer'
+//
+// ReactDom.render(
+//   <BarShowContainer />,
+//   document.getElementById("app")
+// );
+
 import React from "react";
 import ReactDom from "react-dom";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      pets: []
-    }
-  }
+import BarIndexContainer from './containers/BarIndexContainer'
+import BarShowContainer from './containers/BarShowContainer'
+import ReviewIndexContainer from './containers/ReviewIndexContainer'
 
-  componentDidMount() {
-    fetch("/api/v1/pets").then((resp) => {
-      if(resp.ok) {
-        return resp
-      }
-      else {
-        throw new Error(resp.Error)
-      }
-    }).then(resp => {
-      return resp.json();
-    }).then(petsPayload => {
-      this.setState({pets: petsPayload.content})
-    }) 
-  }
-
-  render() {
-    const petListItems = this.state.pets.map((pet) => {
-      return (<li><h2>{ pet.name }</h2><p>{ pet.species}</p></li>)
-    })
-    return (<ul>{petListItems}</ul>)
-  }
+const containerMap = {
+  "bar-index": BarIndexContainer,
+  "review-index": ReviewIndexContainer,
+  "bar-show": BarShowContainer
 }
 
-ReactDom.render(<App />,document.getElementById("app"))
+for(const domId in containerMap) {
+  if(document.getElementById(domId)) {
+    const Component = containerMap[domId]
+    ReactDom.render(<Component />, document.getElementById(domId))
+  }
+}
