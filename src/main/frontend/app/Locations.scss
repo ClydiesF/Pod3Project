@@ -1,0 +1,40 @@
+.locations {
+    width: 100%;
+  
+}
+
+.locations h3 {
+    text-align: center;
+    color: maroon;
+    margin-bottom: 40px;
+}
+
+.box-section {
+    display: flex;
+    justify-content: space-between;
+}
+.box {
+    border-radius: 10px;
+    border: solid 1px transparent;
+    width: 30%;
+    overflow: hidden;
+}
+.box:hover {
+    cursor: pointer;
+}
+.box img {
+    width: 100%;
+}
+
+
+.content h4, .content p {
+    background-color: maroon;
+    margin: 0px;
+    color: white;
+    padding: 5px;
+}
+.content p {
+    font-size: 10px;
+}
+
+  

@@ -1,23 +1,24 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Spring Boot Thymleaf Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation-float.css" integrity="sha256-h9i8L1eVkaZg4vi/+f+jUUbAulAo9wnQwZtoFHoaUEY=" crossorigin="anonymous" />
+  <title>Bars N Beaches</title>
 </head>
-<body>
-<main role="main" class="container">
-  <form method="POST" action="/login" class="form-signin">
+<body style="margin:1rem; padding:1rem">
+<main class="container">
+  <form method="POST" action="#" th:action="@{/login}" th:object="${userLogin}" class="form-signin">
     <h2 class="form-heading">Log in</h2>
     <div>
       <span th:text="${message}"></span>
-      <input name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
-      <input name="password" type="password" class="form-control" placeholder="Password"/>
+      <input name="username" type="text" th:field="*{username}" th:value="*{username}" class="form-control" placeholder="Username" autofocus="true"/>
+      <input name="password" type="password" th:field="*{password}" th:value="*{password}" class="form-control" placeholder="Password"/>
       <span th:text="${error}"></span>
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-      <h4 class="text-center"><a th:href="@{/registration}">Create an account</a></h4>
+      <input type="submit" value="Submit" />
+      <br>
+      <br>
+      <h4><a th:href="@{/registration}" class="button">Create an account</a></h4>
     </div>
   </form>
 </main>
