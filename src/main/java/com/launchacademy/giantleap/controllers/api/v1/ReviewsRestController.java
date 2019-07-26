@@ -1,4 +1,4 @@
-package com.launchacademy.giantleap.controllers;
+package com.launchacademy.giantleap.controllers.api.v1;
 
 import com.launchacademy.giantleap.models.Review;
 import com.launchacademy.giantleap.repositories.ReviewRepository;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class ReviewRestController {
+public class ReviewsRestController {
   private ReviewRepository reviewRepo;
 
   @Autowired
-  public ReviewRestController(ReviewRepository reviewRepo) {
+  public ReviewsRestController(ReviewRepository reviewRepo) {
     this.reviewRepo = reviewRepo;
   }
 

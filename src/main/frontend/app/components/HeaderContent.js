@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './HeaderContent.scss';
 
-
 export default class HeaderContent extends Component {
     render() {
         return (
@@ -9,10 +8,10 @@ export default class HeaderContent extends Component {
                 <div className="nav">
                     <p>Write a Review</p>
                     <div className="links">
-                        <a href="#">Sign-up</a>
+                        <a href="/registration">Sign-up</a>
                     </div>
                     <div className="links">
-                        <a href="#">Log-in</a>
+                        <a href="/login">Log-in</a>
                     </div>
                 </div>
                 <div className="img">

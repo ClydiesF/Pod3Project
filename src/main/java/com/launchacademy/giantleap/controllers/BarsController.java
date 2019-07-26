@@ -19,15 +19,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping
-public class BarController {
+public class BarsController {
 
   private final BarRepository barRepo;
   private final UserRepository userRepo;
 
   @Autowired
-  private BarController(BarRepository barRepo, UserRepository userRepo) {
+  private BarsController(BarRepository barRepo, UserRepository userRepo) {
     this.barRepo = barRepo;
     this.userRepo = userRepo;
+  }
+
+  @GetMapping("/")
+  public String showHomePage() {
+    return "home/index";
+  }
+
+  @GetMapping("/bars")
+  public String getAllBars() {
+    return "bars/index";
+  }
+
+  @GetMapping("/bars/{id}")
+  public String getOneBar() {
+    return "bars/show";
   }
 
   @GetMapping("/newBar")

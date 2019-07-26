@@ -65,7 +65,6 @@ public class UsersController {
     return "security/login";
   }
 
-
   @PostMapping("/login")
   public String userLogin(@ModelAttribute User userLogin, Model model, @RequestParam("username") String username) {
     User user = userRepo.findByUsername(username);
@@ -77,7 +76,6 @@ public class UsersController {
   public String welcome(Model model, @AuthenticationPrincipal UserDetails currentUser) {
     User user = userRepo.findByUsername(currentUser.getUsername());
     model.addAttribute("username", user.getUsername());
-    model.addAttribute("userId", user.getId());
     return "root/welcome";
   }
 
