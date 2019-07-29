@@ -30,12 +30,12 @@ export default class HeaderContent extends Component {
                     <p><i className="fas fa-cocktail"></i>  Bars</p>
                     <p><i className="fas fa-umbrella-beach"></i>   Beaches</p>
                 </div>
-                <div>
+                <div className="slogan-section">
                     <p className="slogan"><i>find the best places to quench your thirst...</i></p>
                 </div>
-                <hr/>
-                <h6>"Getting Litty"</h6>
-                <h6>photo by Master Cheif</h6>
+               
+                <h6>"Pool Party Diving"</h6>
+                <h6>photo by : Jakob Owens @jakobowens1</h6>
             </div>
         )
     }

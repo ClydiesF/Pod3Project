@@ -4,24 +4,28 @@
 
 .locations h3 {
     text-align: center;
-    color: maroon;
+    color:orangered;
     margin-bottom: 40px;
 }
 
 .box-section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .box {
     border-radius: 10px;
-    border: solid 1px transparent;
-    width: 30%;
+    border: solid .5px lightgray;
+    width: 260px;
     overflow: hidden;
+    margin-right: 20px;
+    transition: all .5s;
 }
 
 .box:hover {
     cursor: pointer;
+    transform: translateY(-10px);
+    box-shadow: 11px 14px 15px -9px rgba(0,0,0,0.75);
 }
 
 .box img {
@@ -29,12 +33,55 @@
 }
 
 .content h4, .content p {
-    background-color: maroon;
     margin: 0px;
-    color: white;
+    color: orangered;
     padding: 5px;
 }
 
 .content p {
     font-size: 10px;
+}
+
+// CODE BELOW FOR REVIEW SECTION 
+.review {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.review-section {
+    width: 40%;
+    border: solid 1px forestgreen;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.image {
+    border-right: solid 1px forestgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image img {
+    width: 100px;
+   
+}
+
+.text {
+    padding: 10px;
+    
+}
+.text h3{
+
+}
+.text p{
+
+}
+.text button{
+    padding: 8px;
+    background-color:orange;
+    color: white;
+    border-radius: 5px;
+
 }
