@@ -21,6 +21,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "users")
@@ -61,4 +62,5 @@ public class User {
   @JsonManagedReference
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "barOwner")
   private List<Bar> bars = new ArrayList<Bar>();
+
 }

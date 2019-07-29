@@ -47,10 +47,16 @@ public class UsersController {
   @PostMapping("/registration")
   public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
     if (bindingResult.hasErrors()) {
-      return "registration";
+      return "security/registration";
     }
+
+    if(userForm.getUserPic().trim().equals("") || userForm.getUserPic() == null){
+      userForm.setUserPic("https://cdn1.iconfinder.com/data/icons/ninja-things-1/720/ninja-background-512.png");
+    }
+
     userService.save(userForm);
     securityService.autoLogin(userForm.getUsername(), userForm.getPassword());
+
     return "redirect:/welcome";
   }
 
@@ -65,17 +71,10 @@ public class UsersController {
     return "security/login";
   }
 
-  @PostMapping("/login")
-  public String userLogin(@ModelAttribute User userLogin, Model model, @RequestParam("username") String username) {
-    User user = userRepo.findByUsername(username);
-    securityService.autoLogin(user.getUsername(), user.getPassword());
-    return "redirect:/welcome";
-  }
-
   @GetMapping({"/welcome"})
-  public String welcome(Model model, @AuthenticationPrincipal UserDetails currentUser) {
-    User user = userRepo.findByUsername(currentUser.getUsername());
-    model.addAttribute("username", user.getUsername());
+  public String welcome(Model model, Authentication authentication, @AuthenticationPrincipal UserDetails currentUser) {
+    User loggedUsed = userRepo.findByUsername(currentUser.getUsername());
+    model.addAttribute("currentUser", loggedUsed);
     return "root/welcome";
   }
 

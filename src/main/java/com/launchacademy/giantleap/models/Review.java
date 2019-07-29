@@ -47,4 +47,16 @@ public class Review {
   @ManyToOne
   @JoinColumn(name ="reviewer_id")
   private User reviewer;
+
+  public String getReviewerPic(){
+    return reviewer.getUserPic();
+  }
+
+  public String getReviewerUsername(){
+    return reviewer.getUsername();
+  }
+
+  public Integer getBarReviewedId(){
+    return bar.getId();
+  }
 }

@@ -6,7 +6,9 @@ export default class HeaderContent extends Component {
         return (
             <div className="HeaderContent">
                 <div className="nav">
-                    <p>Write a Review</p>
+                    <div className="links">
+                        <a href="/bars">Browse</a>
+                    </div>
                     <div className="links">
                         <a href="/registration">Sign-up</a>
                     </div>
@@ -27,6 +29,9 @@ export default class HeaderContent extends Component {
                 <div className="category">
                     <p><i className="fas fa-cocktail"></i>  Bars</p>
                     <p><i className="fas fa-umbrella-beach"></i>   Beaches</p>
+                </div>
+                <div>
+                    <p className="slogan"><i>find the best places to quench your thirst...</i></p>
                 </div>
                 <hr/>
                 <h6>"Getting Litty"</h6>

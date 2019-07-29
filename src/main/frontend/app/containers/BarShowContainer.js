@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ReviewFormContainer from './ReviewFormContainer'
+import './BarShowContainer.scss';
 
 class BarShowContainer extends Component {
   constructor(props) {
@@ -27,23 +27,48 @@ class BarShowContainer extends Component {
   render() {
     let reviewsArray = this.state.reviews.map(review => {
       return(
-        <li>
-          {review.rating} - {review.comment}
-        </li>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-2 text-center">
+              <img src={review.reviewerPic} alt="avatar pic" height="40" width="40"/>
+              <p>{review.reviewerUsername}</p>
+            </div>
+            <div className="col-md-10 pg-vertical-line">
+              <p>Rating: {review.rating} / 10</p>
+              <textarea rows="4" cols="85" maxlength="1000" style={{border: `none`, resize: `none`}} readOnly>{review.comment}</textarea>
+            </div>
+          </div>
+          <hr></hr>
+        </div>
       )
     })
 
     return(
       <div>
-        <h1>Here are the deets on the {this.state.bar.barName}</h1>
-        <h3>Location: {this.state.bar.location}</h3>
-        <h3>Description: {this.state.bar.description}</h3>
-        <h3>Near the beach: {this.state.bar.hasBeach}</h3>
-        <h2>Customer Reviews</h2>
-        <ul>{reviewsArray}</ul>
-        <div>
-          <ReviewFormContainer />
+        <div className="container pg-border">
+          <div className="row">
+
+            <div className="col-md-4">
+              <img src="https://i.ytimg.com/vi/LObpA84ddL0/hqdefault.jpg" alt="Bar ambiance" height="240" width="280"/>
+            </div>
+
+            <div className="col-md-8 pg-vertical-line d-md-flex">  
+              <div className="text-primary">
+                <h2>{this.state.bar.barName}</h2>
+                <p><strong>Location</strong><br></br> {this.state.bar.location}</p>
+                <p><strong>Description</strong><br></br> {this.state.bar.description}</p>
+                <p><strong>Near the beach</strong><br></br> {this.state.bar.hasBeach?"Yes":"No"}</p>
+              </div>
+              <button type="button" className="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Write a review</button>
+            </div>
+
+          </div>
         </div>
+
+        <hr style={{borderTop: `2px solid maroon`}}></hr>
+        <h2>Reviews</h2>
+        <br></br>
+        {reviewsArray}
       </div>
     )
   }

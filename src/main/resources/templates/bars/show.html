@@ -1,8 +1,54 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org"
       th:replace="~{fragments/layout :: layout (~{::body})}">
+
   <body>
-    <div id="bar-show">
+
+    <div id="bar-show"></div>
+
+    <div class="container">
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h3 class="modal-title">Add a review</h3>
+            </div>
+
+            <div class="modal-body">
+              <form action="#" th:action="'/bars/'+${barId}" th:object="${review}" method="POST">
+                <label for="rating">Rating</label><br>
+                <select th:field="*{rating}" id="rating" name="rating">
+                  <option value="">--</option>
+                  <option th:value="1" >1</option>
+                  <option th:value="2" >2</option>
+                  <option th:value="3" >3</option>
+                  <option th:value="4" >4</option>
+                  <option th:value="5" >5</option>
+                  <option th:value="6" >6</option>
+                  <option th:value="7" >7</option>
+                  <option th:value="8" >8</option>
+                  <option th:value="9" >9</option>
+                  <option th:value="10" >10</option>
+                </select> out of 10
+                <br>
+                <br>
+                <div>
+                  <label for="comment">Comment</label><br>
+                  <textarea type="text" id="comment" th:field="*{comment}" th:value="*{comment}" rows="5" cols="60" maxlength="1000"/>
+                </div>
+                <br>
+                <div>
+                  <input type="submit" value="Submit" class="btn btn-default"/>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+
   </body>
 </html>
