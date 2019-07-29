@@ -77,5 +77,4 @@ public class UsersController {
     model.addAttribute("currentUser", loggedUsed);
     return "root/welcome";
   }
-
 }

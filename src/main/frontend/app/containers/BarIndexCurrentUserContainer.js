@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 
-// import BarTile from '../components/BarTile'
-
 class BarIndexCurrentUserContainer extends Component {
   constructor(props) {
     super(props);
@@ -35,17 +33,15 @@ class BarIndexCurrentUserContainer extends Component {
   }
 
     render() {
-
         let barIds=[];
         this.state.reviews.map(review => {
             if(!barIds.includes(review.barReviewedId)){
                 barIds.push(review.barReviewedId)
             }
         })
-        console.log(barIds)
 
         barIds.map(id=>{
-            console.log(this.fetchBar(id))
+            this.fetchBar(id)
         })
 
         return(

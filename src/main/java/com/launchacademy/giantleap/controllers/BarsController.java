@@ -110,9 +110,6 @@ public class BarsController {
     reviewRepo.save(review);
     userRepo.save(user);
     barRepo.save(currentBar);
-
     return "redirect:/bars/{barId}";
-
-    }
-
+  }
 }

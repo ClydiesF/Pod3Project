@@ -62,5 +62,4 @@ public class User {
   @JsonManagedReference
   @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "barOwner")
   private List<Bar> bars = new ArrayList<Bar>();
-
 }
