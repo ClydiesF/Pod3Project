@@ -1,13 +1,36 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation-float.css" integrity="sha256-h9i8L1eVkaZg4vi/+f+jUUbAulAo9wnQwZtoFHoaUEY=" crossorigin="anonymous" />
-  <title>Bars N Beaches</title>
-</head>
-<body style="margin:1rem; padding:1rem">
-  <main role="main" class="container">
-    <h2 class="form-signin-heading" th:text="'Welcome! '+${username}">Success!</h2>
-  </main>
-  <p><a th:href="'/newBar'" class="button">Add a bar</a>
-</body>
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+  <head>
+    <title>Bars N Beaches</title>
+  </head>
+
+  <body style="margin:1rem; padding:1rem">
+    <main role="main" class="container">
+      <h2 class="text-center" th:text="'Welcome '+${currentUser.username}">Success!</h2>
+      <br>
+      <div class="text-center"><img th:src="${currentUser.userPic}" alt="avatar pic" height="100" width="100"></div>
+    </main>
+    <br>
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center pg-vertical-line1">
+          <p><a th:href="'#'" class="btn btn-default">I want to find a Bar</a></p>
+        </div>
+        <div class="col-md-4 text-center pg-vertical-line">
+          <p><a th:href="'/newBar'" class="btn btn-default">I want to add a Bar</a></p>
+        </div>
+        <div class="col-md-4 text-center pg-vertical-line">
+          <p><a th:href="'#'" class="btn btn-default">I want to edit my profile</a></p>
+        </div>
+      </div>
+    </div>
+
+    <hr style="border-top: 2px solid maroon">
+
+    <div id="bar-index-currentUser"></div>
+  </body>
+
 </html>

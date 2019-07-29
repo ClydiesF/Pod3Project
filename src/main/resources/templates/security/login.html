@@ -1,26 +1,33 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation-float.css" integrity="sha256-h9i8L1eVkaZg4vi/+f+jUUbAulAo9wnQwZtoFHoaUEY=" crossorigin="anonymous" />
-  <title>Bars N Beaches</title>
-</head>
-<body style="margin:1rem; padding:1rem">
-<main class="container">
-  <form method="POST" action="#" th:action="@{/login}" th:object="${userLogin}" class="form-signin">
-    <h2 class="form-heading">Log in</h2>
-    <div>
-      <span th:text="${message}"></span>
-      <input name="username" type="text" th:field="*{username}" th:value="*{username}" class="form-control" placeholder="Username" autofocus="true"/>
-      <input name="password" type="password" th:field="*{password}" th:value="*{password}" class="form-control" placeholder="Password"/>
-      <span th:text="${error}"></span>
-      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-      <input type="submit" value="Submit" />
-      <br>
-      <br>
-      <h4><a th:href="@{/registration}" class="button">Create an account</a></h4>
-    </div>
-  </form>
-</main>
-</body>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation-float.css" integrity="sha256-h9i8L1eVkaZg4vi/+f+jUUbAulAo9wnQwZtoFHoaUEY=" crossorigin="anonymous" />
+    <title>Bars N Beaches</title>
+  </head>
+
+  <body style="margin:1rem; padding:1rem">
+
+    <main role="main" class="container">
+      <form method="POST" action="/login" class="form-signin">
+        <h2 class="form-heading">Log in</h2>
+        <div>
+          <span th:text="${message}"></span>
+          <span th:text="${error}"></span>
+          <input name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
+          <input name="password" type="password" class="form-control" placeholder="Password"/>
+          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+          <input type="submit" value="Sign in" />
+          <br>
+          <br>
+          <div class="text-center">
+            Not yet a member? <a th:href="@{/registration}" >Sign up here</a>
+          </div>
+        </div>
+      </form>
+    </main>
+
+  </body>
+
 </html>

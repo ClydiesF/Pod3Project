@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" th:fragment="layout (template)">
   <head>
-    <title>Bars and Beaches</title>
-    <script src="https://kit.fontawesome.com/01632f5a57.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Bars N Beaches</title>
   </head>
   <body>
     <th:block th:include="${template}"/>
     <script src="/bundle.js"></script>
+    <script src="https://kit.fontawesome.com/01632f5a57.js"></script>
   </body>
 </html>

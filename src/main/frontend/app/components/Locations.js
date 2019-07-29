@@ -5,7 +5,7 @@ export default class Locations extends Component {
     render() {
         return (
             <div className="locations">
-                <h3>Check out some of the hottest locations!</h3>
+                <h3><i>Check out some of the hottest locations!</i></h3>
                 <div className="box-section">
                     <div className="box">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjhR-7RqHBcSkZoeUKauYho7dmSVnQXgXx0TlojptFjR9x5Z3nyw" alt="beach"/>
