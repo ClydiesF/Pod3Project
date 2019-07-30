@@ -8,59 +8,48 @@ class BarIndexCurrentUserContainer extends Component {
         bars:[],
         reviews: []
     }
-    this.fetchBar = this.fetchBar.bind(this)
   }
 
-  componentDidMount() {
-    fetch('/api/v1/currentLoginUser')
-    .then(response => {
-      return response.json()
-    })
-    .then(currentUser => {
-      this.setState( {currentUser: currentUser} )
-      this.setState( {reviews: currentUser.reviews} )
-    })
-  }
-
-  fetchBar(barId) {
-    fetch(`/api/v1/bars/${barId}`)
-    .then(response => {
-        return response.json()
-    })
-    .then(bar => {
-        return bar
-    })
-  }
+    componentDidMount() {
+        fetch('/api/v1/currentLoginUser')
+        .then(response => {
+            return response.json()
+        })
+        .then(currentUser => {
+            this.setState( {currentUser: currentUser} )
+            this.setState( {reviews: currentUser.reviews} )
+        })
+    }
 
     render() {
-        let barIds=[];
-        this.state.reviews.map(review => {
-            if(!barIds.includes(review.barReviewedId)){
-                barIds.push(review.barReviewedId)
-            }
-        })
+        let modifiedReviews = this.state.reviews;
+        const unique = modifiedReviews.map(e => e["barReviewedName"])
+            .map((e, i, final) => final.indexOf(e) === i && i)
+            .filter(e => modifiedReviews[e]).map(e => modifiedReviews[e]);
 
-        barIds.map(id=>{
-            this.fetchBar(id)
-        })
-
+        let barsArray = unique.map(review => {
+            return(
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-2 text-center">
+                    <img src={review.barReviewedPic} alt="Bar pic" height="40" width="40"/>
+                  </div>
+                  <div className="col-md-10 pg-vertical-line">
+                    <p>{review.barReviewedName}</p>
+                    <p>{review.barReviewedLocation}</p>
+                  </div>
+                </div>
+                <hr></hr>
+              </div>
+            )
+          })
+    
         return(
             <div>
                 <h3 className="text-center">Bars I've reviewed</h3>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-2 text-center">
-                            <img src="" alt="Bar pic" height="40" width="40"/>
-                        </div>
-                        <div className="col-md-10 pg-vertical-line">
-                            <p>Bar Name</p>
-                            <p>Bar Location</p>
-                        </div>
-                    </div>
-                    <hr></hr>
-                </div>               
+                <div>{barsArray}</div>              
             </div>
         )
-  }
+    }
 }
 export default BarIndexCurrentUserContainer

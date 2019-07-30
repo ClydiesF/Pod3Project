@@ -20,7 +20,6 @@
               <form action="#" th:action="'/bars/'+${barId}" th:object="${review}" method="POST">
                 <label for="rating">Rating</label><br>
                 <select th:field="*{rating}" id="rating" name="rating">
-                  <option value="">--</option>
                   <option th:value="1" >1</option>
                   <option th:value="2" >2</option>
                   <option th:value="3" >3</option>

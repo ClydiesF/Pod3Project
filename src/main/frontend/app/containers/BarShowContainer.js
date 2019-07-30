@@ -11,7 +11,6 @@ class BarShowContainer extends Component {
   }
 
   componentDidMount() {
-    //we will implement ways to address ids that don't exist
     let pathArray = window.location.pathname.split('/');
     let barId = pathArray[pathArray.length-1];
     fetch(`/api/v1/bars/${barId}`)

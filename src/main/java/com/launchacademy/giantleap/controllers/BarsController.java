@@ -68,9 +68,9 @@ public class BarsController {
   }
 
   @PostMapping("/newBar")
-  public String createBar(@ModelAttribute Bar bar, @AuthenticationPrincipal UserDetails currentUser, Model model) {
+  public String createBar(@ModelAttribute @Valid Bar bar, BindingResult bindingResult, @AuthenticationPrincipal UserDetails currentUser, Model model) {
     if(currentUser == null){
-      return "redirect:/registration";
+      return "redirect:/login";
     }
 
     User user = userRepo.findByUsername(currentUser.getUsername());
@@ -78,10 +78,14 @@ public class BarsController {
     if(!user.getIsBarOwner()){
       model.addAttribute("error", true);
       return "bars/new";
+    }
+
+    if (bindingResult.hasErrors()) {
+      return "bars/new";
     }else{
       bar.setBarOwner(user);
       barRepo.save(bar);
-      return "redirect:/welcome";
+      return "redirect:/bars";
     }
 
   }
