@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation-float.css" integrity="sha256-h9i8L1eVkaZg4vi/+f+jUUbAulAo9wnQwZtoFHoaUEY=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <title>Bars N Beaches</title>
   </head>
 
@@ -13,11 +13,12 @@
         <h2 class="form-heading">Log in</h2>
         <div>
           <span th:text="${message}"></span>
-          <span th:text="${error}"></span>
+          <p th:if="${error}" class="alert alert-danger">Your username and password is invalid</p>
           <input name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
+          <br>
           <input name="password" type="password" class="form-control" placeholder="Password"/>
           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
+          <br>
           <input type="submit" value="Sign in" />
           <br>
           <br>
@@ -29,5 +30,4 @@
     </main>
 
   </body>
-
 </html>

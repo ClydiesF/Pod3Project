@@ -1,36 +1,40 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation-float.css" integrity="sha256-h9i8L1eVkaZg4vi/+f+jUUbAulAo9wnQwZtoFHoaUEY=" crossorigin="anonymous" />
-  <title>Bars N Beaches</title>
-</head>
-<body style="margin:1rem; padding:1rem">
-<main role="main" class="container">
-  <form method="POST" action="/registration" th:object="${userForm}" class="form-signin">
-    <h2 class="form-signin-heading">Create your account</h2>
-    <div>
-      <input type="text" name="username" th:value="*{username}" class="form-control" placeholder="Username" autofocus="true" />
-    </div>
-    <br>
-    <div>
-      <input type="password" name="password" th:value="*{password}" class="form-control" placeholder="Password" />
-    </div>
-    <br>
-    <div>
-      <label>Are You a Bar Owner?</label>
-      <select typeof="text" name="isBarOwner" th:value="*{isBarOwner}" class="form-control">
-        <option>Yes</option>
-        <option>No</option>
-      </select>
-    </div>
-    <br>
-    <div>
-      <label>Please enter a image URL</label>
-      <input type="text" name="userPic" th:value="*{userPic}" class="form-control" placeholder="Enter Image URL to page" />
-    </div>
-    <br>
-    <input type="submit" value="Submit" />
-  </form>
-</main>
-</body>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Bars N Beaches</title>
+  </head>
+  <body style="margin:1rem; padding:1rem">
+    <main role="main" class="container">
+      <form method="POST" action="/registration" th:object="${userForm}" class="form-signin">
+        <h2 class="form-signin-heading">Create your account</h2>
+        <div>
+          <label>Username</label>
+          <p th:errors="*{username}" class="alert alert-danger"></p>
+          <input type="text" name="username" th:value="*{username}" class="form-control" placeholder="Username" autofocus="true" />
+        </div>
+        <br>
+        <div>
+          <label>Password</label>
+          <p th:errors="*{password}" class="alert alert-danger"></p>
+          <input type="password" name="password" th:value="*{password}" class="form-control" placeholder="Password" />
+        </div>
+        <br>
+        <div>
+          <label>Are You a Bar Owner?</label>
+          <select typeof="text" name="isBarOwner" th:value="*{isBarOwner}" class="form-control">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <br>
+        <div>
+          <label>Image URL for your Profile pic</label>
+          <input type="text" name="userPic" th:value="*{userPic}" class="form-control" placeholder="Image URL" />
+        </div>
+        <br>
+        <input type="submit" value="Submit" />
+      </form>
+    </main>
+  </body>
 </html>
