@@ -6,6 +6,8 @@ import com.launchacademy.giantleap.models.User;
 import com.launchacademy.giantleap.repositories.BarRepository;
 import com.launchacademy.giantleap.repositories.ReviewRepository;
 import com.launchacademy.giantleap.repositories.UserRepository;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
@@ -102,6 +104,10 @@ public class BarsController {
 
     Bar currentBar = barRepo.findById(barId).get();
     review.setBar(currentBar);
+
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    LocalDateTime now = LocalDateTime.now();
+    review.setReviewDate(now);
 
     List<Review> reviewListforUser = user.getReviews();
     reviewListforUser.add(review);
