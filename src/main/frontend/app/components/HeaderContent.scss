@@ -32,7 +32,11 @@ align-items: center;
     cursor: pointer;
     text-decoration: none;
     color: white;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: forestgreen;
+    padding: 7px;
+    border-radius: 5px;
 }
 
 .links:hover {
@@ -56,7 +60,7 @@ align-items: center;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border:solid 2px white;
+  border:solid 5px white;
 }
 
 .search-bar {
@@ -121,13 +125,15 @@ h6 {
     justify-content: center;
     padding: 0px;
    
+   
 }
 
 .category p {
     font-size: 16px;
     margin-right: 10px;
     font-weight: bold;
-    color: white;
+    color:white;
+    
 }
 
 .slogan-section {
@@ -138,10 +144,10 @@ h6 {
    
 }
 .slogan {
-    color: white;
+    color:white;
     font-size: 19px;
     font-weight: bold;
-    border: solid 5px forestgreen;
     padding: 10px;
     border-radius: 5px;
+    background-color: forestgreen;
 }
