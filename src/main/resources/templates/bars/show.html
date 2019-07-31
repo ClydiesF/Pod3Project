@@ -19,8 +19,7 @@
             <div class="modal-body">
               <form action="#" th:action="'/bars/'+${barId}" th:object="${review}" method="POST">
                 <label for="rating">Rating</label><br>
-                <select th:field="*{rating}" id="rating" name="rating">
-                  <option value="">--</option>
+                <select th:field="*{rating}" id="rating" name="rating" >
                   <option th:value="1" >1</option>
                   <option th:value="2" >2</option>
                   <option th:value="3" >3</option>
@@ -36,7 +35,7 @@
                 <br>
                 <div>
                   <label for="comment">Comment</label><br>
-                  <textarea type="text" id="comment" th:field="*{comment}" th:value="*{comment}" rows="5" cols="60" maxlength="1000"/>
+                  <textarea type="text" id="comment" th:field="*{comment}" th:value="*{comment}" rows="5" cols="60" maxlength="1000" class="form-control"/>
                 </div>
                 <br>
                 <div>

@@ -1,0 +1,45 @@
+footer {
+    background: whitesmoke;
+    border-top: solid 1px darkgrey;
+    margin-top: 50px;
+}
+
+.footerSection {
+    display: flex;
+    justify-content: center;
+}
+
+.footerSection div {
+   margin: 15px;
+   margin-right: 40px;
+}
+
+.footerSection h4 {
+   font-size: 20px;
+   font-weight: bold;
+   color:forestgreen;
+}
+
+.footerSection a {
+    display: block;
+    padding: 7px;
+    text-decoration: none;
+    color: brown;
+}
+
+footer p {
+    text-align: center;
+    font-style: italic;
+    font-size: 12px;
+}
+.footer-image {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-image img{
+    width:70px;
+    border: solid 3px forestgreen;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

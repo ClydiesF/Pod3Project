@@ -29,7 +29,19 @@ export default class Locations extends Component {
                         </div>
                     </div>
                 </div>
-                
+
+                <div className="review">
+                    <div className="review-section">
+                        <div className="image">
+                            <img src="https://www.sccpre.cat/mypng/detail/224-2243045_reviews-icon-thank-you-for-customer-review-post.png"></img>
+                        </div>
+                        <div className="text">
+                            <h3>Help the Community</h3>
+                            <p>Find Bnb Reviews Helpful? Start helping others by sharing your experience.</p>
+                            <button>Start Your First Review</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

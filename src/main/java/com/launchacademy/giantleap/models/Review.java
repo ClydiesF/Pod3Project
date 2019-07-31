@@ -1,6 +1,10 @@
 package com.launchacademy.giantleap.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
@@ -26,6 +33,8 @@ public class Review {
   @Column(name="id", nullable=false, unique=true)
   private Integer id;
 
+  @Min(value=1)
+  @Max(value=10)
   @Column(name="rating", nullable=false)
   private Integer rating;
 
@@ -48,6 +57,9 @@ public class Review {
   @JoinColumn(name ="reviewer_id")
   private User reviewer;
 
+  @Column(name="review_date")
+  private LocalDateTime reviewDate;
+
   public String getReviewerPic(){
     return reviewer.getUserPic();
   }
@@ -58,5 +70,13 @@ public class Review {
 
   public Integer getBarReviewedId(){
     return bar.getId();
+  }
+
+  public String getBarReviewedName(){
+    return bar.getBarName();
+  }
+
+  public String getBarReviewedLocation(){
+    return bar.getLocation();
   }
 }

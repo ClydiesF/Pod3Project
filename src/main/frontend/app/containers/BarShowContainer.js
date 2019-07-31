@@ -11,7 +11,6 @@ class BarShowContainer extends Component {
   }
 
   componentDidMount() {
-    //we will implement ways to address ids that don't exist
     let pathArray = window.location.pathname.split('/');
     let barId = pathArray[pathArray.length-1];
     fetch(`/api/v1/bars/${barId}`)
@@ -25,17 +24,26 @@ class BarShowContainer extends Component {
   }
 
   render() {
-    let reviewsArray = this.state.reviews.map(review => {
+    let sortedReviews = this.state.reviews
+    sortedReviews.sort((a, b) => (a.reviewDate < b.reviewDate) ? 1 : -1)
+
+    let reviewsArray = sortedReviews.map(review => {
+
+      let millisec = Date.parse(review.reviewDate)
+      let date = new Date(parseInt(millisec, 10));
+      let dateFormat = date.toLocaleString();
+
       return(
         <div className="container">
           <div className="row">
-            <div className="col-md-2 text-center">
-              <img src={review.reviewerPic} alt="avatar pic" height="40" width="40"/>
+            <div className="col-md-2 text-center center">    
+              <img src={review.reviewerPic} alt="avatar pic" height="60" width="60"/>
               <p>{review.reviewerUsername}</p>
             </div>
             <div className="col-md-10 pg-vertical-line">
+              <div className="dateformat"><p><i>{dateFormat}</i></p></div>
               <p>Rating: {review.rating} / 10</p>
-              <textarea rows="4" cols="85" maxlength="1000" style={{border: `none`, resize: `none`}} readOnly>{review.comment}</textarea>
+              <textarea className="form-control" rows="4" cols="85" maxlength="1000" style={{border: `none`, resize: `none`}} readOnly>{review.comment}</textarea>
             </div>
           </div>
           <hr></hr>

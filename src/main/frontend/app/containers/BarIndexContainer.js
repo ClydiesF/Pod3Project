@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import './BarIndexContainer.scss'
+import NavBar from '../components/NavBar'
 import BarTile from '../components/BarTile'
 
 class BarIndexContainer extends Component {
@@ -34,8 +36,13 @@ class BarIndexContainer extends Component {
 
     return(
       <div>
-        <h1 className="text-center">Reviewed Bars</h1>
-        <ul>{barsArray}</ul>
+        <NavBar/>
+        <div className="barsContainer">
+          <div className="bars">
+            <h1>List of Bars</h1>
+            <ul>{barsArray}</ul>
+          </div>
+        </div>
       </div>
     )
   }
