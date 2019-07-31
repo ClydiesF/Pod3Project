@@ -19,7 +19,7 @@ class BarIndexContainer extends Component {
       this.setState( {bars: bars} )
     })
   }
-  
+
     render() {
       let barsArray = this.state.bars.map(bar => {
         return(
@@ -28,13 +28,14 @@ class BarIndexContainer extends Component {
             id={bar.id}
             name={bar.barName}
             location={bar.location}
+            pic={bar.barPic}
           />
         )
       })
 
     return(
       <div>
-        <h1>List of Bars</h1>
+        <h1 className="text-center">Reviewed Bars</h1>
         <ul>{barsArray}</ul>
       </div>
     )
