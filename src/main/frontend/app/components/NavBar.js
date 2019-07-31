@@ -13,7 +13,6 @@ export default class NavBar extends Component {
     }
 
     componentDidMount(){
-        
         fetch("http://localhost:8080/api/v1/currentLoginUser")
         .then(response => {
             if (response.ok) {
@@ -35,7 +34,6 @@ export default class NavBar extends Component {
     }
 
     render() {
-        
         return (
             <nav>
                 <div className="imageContainer">
