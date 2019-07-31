@@ -1,0 +1,1 @@
+ALTER TABLE reviews ADD review_date TIMESTAMP;

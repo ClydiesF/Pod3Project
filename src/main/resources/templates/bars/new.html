@@ -13,19 +13,19 @@
       <div>
         <label for="barName">Bar Name</label><br>
         <p th:errors="*{barName}" class="alert alert-danger"></p>
-        <input type="text" id="barName" name="barName" th:value="*{barName}"/>
+        <input type="text" id="barName" name="barName" th:value="*{barName}" class="form-control"/>
       </div>
       <br>
       <div>
         <label for="description">Description</label><br>
         <p th:errors="*{description}" class="alert alert-danger"></p>
-        <textarea type="text" id="description" th:field="*{description}" th:value="*{description}" rows="4" cols="80" maxlength="500"/>
+        <textarea type="text" id="description" th:field="*{description}" th:value="*{description}" rows="4" cols="80" maxlength="500" class="form-control"/>
       </div>
       <br>
       <div>
         <label for="location">Location</label><br>
         <p th:errors="*{location}" class="alert alert-danger"></p>
-        <input type="text" id="location" th:field="*{location}" th:value="*{location}"/>
+        <input type="text" id="location" th:field="*{location}" th:value="*{location}" class="form-control"/>
       </div>
       <br>
       <div>

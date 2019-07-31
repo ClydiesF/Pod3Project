@@ -1,6 +1,10 @@
 package com.launchacademy.giantleap.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import lombok.Getter;
@@ -51,6 +56,9 @@ public class Review {
   @ManyToOne
   @JoinColumn(name ="reviewer_id")
   private User reviewer;
+
+  @Column(name="review_date")
+  private LocalDateTime reviewDate;
 
   public String getReviewerPic(){
     return reviewer.getUserPic();
