@@ -57,10 +57,10 @@ class BarShowContainer extends Component {
           <div className="row">
 
             <div className="col-md-4">
-              <img src="https://i.ytimg.com/vi/LObpA84ddL0/hqdefault.jpg" alt="Bar ambiance" height="240" width="280"/>
+              <img src={this.state.bar.barPic} alt="Bar ambiance" height="240" width="280"/>
             </div>
 
-            <div className="col-md-8 pg-vertical-line d-md-flex">  
+            <div className="col-md-8 pg-vertical-line d-md-flex">
               <div className="text-primary">
                 <h2>{this.state.bar.barName}</h2>
                 <p><strong>Location</strong><br></br> {this.state.bar.location}</p>

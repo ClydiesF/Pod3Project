@@ -48,6 +48,9 @@ public class Bar {
   @Column(name="has_beach")
   private Boolean hasBeach;
 
+  @Column(name="bar_pic")
+  private String barPic;
+
   @JsonBackReference
   @ManyToOne
   @JoinColumn(name="bar_owner_id", nullable=false)

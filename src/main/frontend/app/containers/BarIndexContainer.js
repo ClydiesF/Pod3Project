@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './BarIndexContainer.scss'
 import NavBar from '../components/NavBar'
-
 import BarTile from '../components/BarTile'
 
 class BarIndexContainer extends Component {
@@ -21,7 +20,7 @@ class BarIndexContainer extends Component {
       this.setState( {bars: bars} )
     })
   }
-  
+
     render() {
       let barsArray = this.state.bars.map(bar => {
         return(
@@ -30,6 +29,7 @@ class BarIndexContainer extends Component {
             id={bar.id}
             name={bar.barName}
             location={bar.location}
+            pic={bar.barPic}
           />
         )
       })
