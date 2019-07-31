@@ -7,11 +7,6 @@ const BarTile = (props) => {
   }
 
   return(
-    // <div className="bar-tile">
-    //   <a href={`/bars/${props.id}`}>{props.name}</a>
-    //   <p>{props.name} in {props.location}</p>
-    //   <hr/>
-    // </div>
     <div>
         <div className="container">
             <div className="row">
@@ -28,5 +23,4 @@ const BarTile = (props) => {
     </div>
   )
 }
-
 export default BarTile;

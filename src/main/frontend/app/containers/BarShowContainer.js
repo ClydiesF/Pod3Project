@@ -73,5 +73,4 @@ class BarShowContainer extends Component {
     )
   }
 }
-
 export default BarShowContainer;

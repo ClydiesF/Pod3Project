@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import BarTile from '../components/BarTile'
 
 class BarIndexContainer extends Component {
