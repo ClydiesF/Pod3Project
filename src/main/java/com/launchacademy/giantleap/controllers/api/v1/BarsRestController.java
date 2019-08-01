@@ -57,5 +57,10 @@ public class BarsRestController {
     Bar bar = barRepo.findById(id).orElseThrow(() -> new BarObjectNotFoundException());
     barRepo.delete(bar);
   }
+// implemented by clyde for search bar functionality
+  @GetMapping("/api/v1/bars/{barName}")
+  public Optional<Bar> getOne(@PathVariable String barName) {
+    return barRepo.findByBarName(barName);
+  }
 
 }
