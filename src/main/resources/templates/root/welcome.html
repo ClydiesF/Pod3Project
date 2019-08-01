@@ -1,36 +1,37 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org"
-      th:replace="~{fragments/layout :: layout (~{::body})}">
-  <head>
-    <title>Bars N Beaches</title>
-  </head>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body})}">
 
-  <body style="margin:1rem; padding:1rem">
-    <main role="main" class="container">
-      <h2 class="text-center" th:text="'Welcome '+${currentUser.username}">Success!</h2>
-      <br>
-      <div class="text-center"><img th:src="${currentUser.userPic}" alt="avatar pic" height="100" width="100"></div>
-    </main>
-    <br>
-    <br>
+<head>
+  <title>Bars N Beaches</title>
+</head>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 text-center pg-vertical-line1">
-          <p><a th:href="'#'" class="btn btn-default">I want to find a Bar</a></p>
-        </div>
-        <div class="col-md-4 text-center pg-vertical-line">
-          <p><a th:href="'/newBar'" class="btn btn-default">I want to add a Bar</a></p>
-        </div>
-        <div class="col-md-4 text-center pg-vertical-line">
-          <p><a th:href="'#'" class="btn btn-default">I want to edit my profile</a></p>
-        </div>
+<body style="margin:1rem; padding:1rem">
+  <div id="NavBar"></div>
+  <main role="main" class="container">
+    <h2 class="text-center" th:text="'Welcome '+${currentUser.username}">Success!</h2>
+    <br>
+    <div class="text-center"><img th:src="${currentUser.userPic}" alt="avatar pic" height="100" width="100"></div>
+  </main>
+  <br>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center pg-vertical-line1">
+        <p><a th:href="'#'" class="btn btn-default">I want to find a Bar</a></p>
+      </div>
+      <div class="col-md-4 text-center pg-vertical-line">
+        <p><a th:href="'/newBar'" class="btn btn-default">I want to add a Bar</a></p>
+      </div>
+      <div class="col-md-4 text-center pg-vertical-line">
+        <p><a th:href="'#'" class="btn btn-default">I want to edit my profile</a></p>
       </div>
     </div>
+  </div>
 
-    <hr style="border-top: 2px solid maroon">
+  <hr style="border-top: 2px solid maroon">
 
-    <div id="bar-index-currentUser"></div>
-  </body>
+  <div id="bar-index-currentUser"></div>
+</body>
 
 </html>
