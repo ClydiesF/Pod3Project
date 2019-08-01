@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './BarShowContainer.scss';
+import NavBar from '../components/NavBar';
 
 class BarShowContainer extends Component {
   constructor(props) {
@@ -12,15 +13,15 @@ class BarShowContainer extends Component {
 
   componentDidMount() {
     let pathArray = window.location.pathname.split('/');
-    let barId = pathArray[pathArray.length-1];
+    let barId = pathArray[pathArray.length - 1];
     fetch(`/api/v1/bars/${barId}`)
-    .then(response => {
-      return response.json()
-  })
-    .then(bar => {
-      this.setState( {bar: bar} )
-      this.setState( {reviews: bar.reviews} )
-    })
+      .then(response => {
+        return response.json()
+      })
+      .then(bar => {
+        this.setState({ bar: bar })
+        this.setState({ reviews: bar.reviews })
+      })
   }
 
   render() {
@@ -51,8 +52,9 @@ class BarShowContainer extends Component {
       )
     })
 
-    return(
+    return (
       <div>
+        <NavBar />
         <div className="container pg-border">
           <div className="row">
 
@@ -65,7 +67,7 @@ class BarShowContainer extends Component {
                 <h2>{this.state.bar.barName}</h2>
                 <p><strong>Location</strong><br></br> {this.state.bar.location}</p>
                 <p><strong>Description</strong><br></br> {this.state.bar.description}</p>
-                <p><strong>Near the beach</strong><br></br> {this.state.bar.hasBeach?"Yes":"No"}</p>
+                <p><strong>Near the beach</strong><br></br> {this.state.bar.hasBeach ? "Yes" : "No"}</p>
               </div>
               <button type="button" className="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Write a review</button>
             </div>
@@ -73,7 +75,7 @@ class BarShowContainer extends Component {
           </div>
         </div>
 
-        <hr style={{borderTop: `2px solid maroon`}}></hr>
+        <hr style={{ borderTop: `2px solid maroon` }}></hr>
         <h2>Reviews</h2>
         <br></br>
         {reviewsArray}

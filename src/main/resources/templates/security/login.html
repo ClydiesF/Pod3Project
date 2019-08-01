@@ -1,12 +1,24 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
+
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <title>Bars N Beaches</title>
   </head>
 
-  <body style="margin:1rem; padding:1rem">
+
+<body style="margin:1rem; padding:1rem">
+  <div id="navLogin"></div>
+  <main role="main" class="container">
+    <form method="POST" action="/login" class="form-signin">
+      <h2 class="form-heading">Log in</h2>
+      <div>
+        <span th:text="${message}"></span>
+        <span th:text="${error}"></span>
+        <input name="username" type="text" class="form-control" placeholder="Username" autofocus="true" />
+        <input name="password" type="password" class="form-control" placeholder="Password" />
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
     <main role="main" class="container">
       <form method="POST" action="/login" class="form-signin">
@@ -26,8 +38,9 @@
             Not yet a member? <a th:href="@{/registration}" >Sign up here</a>
           </div>
         </div>
-      </form>
-    </main>
+      </div>
+    </form>
+  </main>
 
   </body>
 </html>

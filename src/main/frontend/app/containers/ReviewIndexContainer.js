@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import NavBar from '../components/NavBar';
 
 class ReviewIndexContainer extends Component {
   constructor(props) {
@@ -10,25 +11,26 @@ class ReviewIndexContainer extends Component {
 
   componentDidMount() {
     fetch('/api/v1/reviews')
-    .then(response => {
-      return response.json()
-    })
-    .then(reviews => {
-      this.setState( {reviews: reviews} )
-    })
+      .then(response => {
+        return response.json()
+      })
+      .then(reviews => {
+        this.setState({ reviews: reviews })
+      })
   }
 
   render() {
     let reviewsArray = this.state.reviews.map(review => {
-      return(
+      return (
         <li>
           {review.barId}: {review.rating} - {review.comment} (Reviewer: {review.reviewerId})
         </li>
       )
     })
 
-    return(
+    return (
       <div>
+        <NavBar />
         <h1>List of Reviews</h1>
         <ul>{reviewsArray}</ul>
       </div>
