@@ -19,6 +19,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Type;
@@ -34,9 +36,12 @@ public class User {
   @Column(name = "id", nullable = false, unique = true)
   private Integer id;
 
+  @Size(max=20)
+  @NotBlank
   @Column(name="username", unique = true)
   private String username;
 
+  @NotBlank
   @Column(name="password")
   private String password;
 

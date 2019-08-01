@@ -6,6 +6,7 @@ import com.launchacademy.giantleap.repositories.UserRepository;
 import com.launchacademy.giantleap.security.SecurityService;
 import com.launchacademy.giantleap.security.UserService;
 import java.security.Principal;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -45,7 +46,7 @@ public class UsersController {
   }
 
   @PostMapping("/registration")
-  public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
+  public String registration(@ModelAttribute("userForm") @Valid User userForm, BindingResult bindingResult) {
     if (bindingResult.hasErrors()) {
       return "security/registration";
     }

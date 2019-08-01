@@ -6,6 +6,8 @@ import com.launchacademy.giantleap.models.User;
 import com.launchacademy.giantleap.repositories.BarRepository;
 import com.launchacademy.giantleap.repositories.ReviewRepository;
 import com.launchacademy.giantleap.repositories.UserRepository;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
@@ -68,9 +70,9 @@ public class BarsController {
   }
 
   @PostMapping("/newBar")
-  public String createBar(@ModelAttribute Bar bar, @AuthenticationPrincipal UserDetails currentUser, Model model) {
+  public String createBar(@ModelAttribute @Valid Bar bar, BindingResult bindingResult, @AuthenticationPrincipal UserDetails currentUser, Model model) {
     if(currentUser == null){
-      return "redirect:/registration";
+      return "redirect:/login";
     }
 
     User user = userRepo.findByUsername(currentUser.getUsername());
@@ -78,10 +80,14 @@ public class BarsController {
     if(!user.getIsBarOwner()){
       model.addAttribute("error", true);
       return "bars/new";
+    }
+
+    if (bindingResult.hasErrors()) {
+      return "bars/new";
     }else{
       bar.setBarOwner(user);
       barRepo.save(bar);
-      return "redirect:/welcome";
+      return "redirect:/bars";
     }
 
   }
@@ -98,6 +104,10 @@ public class BarsController {
 
     Bar currentBar = barRepo.findById(barId).get();
     review.setBar(currentBar);
+
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    LocalDateTime now = LocalDateTime.now();
+    review.setReviewDate(now);
 
     List<Review> reviewListforUser = user.getReviews();
     reviewListforUser.add(review);

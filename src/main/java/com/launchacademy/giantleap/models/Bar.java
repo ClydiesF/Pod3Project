@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
@@ -32,17 +33,23 @@ public class Bar {
   @Column(name="id", nullable=false, unique=true)
   private Integer id;
 
+  @NotBlank
   @Column(name="bar_name", nullable=false)
   private String barName;
 
+  @NotBlank
   @Column(name="description", nullable=false)
   private String description;
 
+  @NotBlank
   @Column(name="location", nullable=false)
   private String location;
 
   @Column(name="has_beach")
   private Boolean hasBeach;
+
+  @Column(name="bar_pic")
+  private String barPic;
 
   @JsonBackReference
   @ManyToOne
