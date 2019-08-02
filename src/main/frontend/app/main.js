@@ -5,17 +5,21 @@ import BarIndexContainer from './containers/BarIndexContainer'
 import BarShowContainer from './containers/BarShowContainer'
 import ReviewIndexContainer from './containers/ReviewIndexContainer'
 import BarIndexCurrentUserContainer from './containers/BarIndexCurrentUserContainer'
+import NavBar from './components/NavBar'
 
 const containerMap = {
   "bar-index": BarIndexContainer,
   "review-index": ReviewIndexContainer,
   "bar-show": BarShowContainer,
   "home-index": HomePageContainer,
-  "bar-index-currentUser": BarIndexCurrentUserContainer
+  "bar-index-currentUser": BarIndexCurrentUserContainer,
+  "nav-bar": NavBar,
+  // "navLogin": NavBar,
+  // "navRegistration": NavBar
 }
 
-for(const domId in containerMap) {
-  if(document.getElementById(domId)) {
+for (const domId in containerMap) {
+  if (document.getElementById(domId)) {
     const Component = containerMap[domId]
     ReactDom.render(<Component />, document.getElementById(domId))
   }

@@ -32,7 +32,9 @@ class BarIndexCurrentUserContainer extends Component {
               <div className="container">
                 <div className="row">
                   <div className="col-md-2 text-center">
-                    <img src={review.barReviewedPic} alt="Bar pic" height="40" width="40"/>
+                    <a href={'/bars/'+review.barReviewedId}>
+                      <img src={review.barReviewedPic} alt="Bar pic" height="60" width="60"/>
+                    </a>
                   </div>
                   <div className="col-md-10 pg-vertical-line">
                     <p><a href={'/bars/'+review.barReviewedId}>{review.barReviewedName}</a></p>

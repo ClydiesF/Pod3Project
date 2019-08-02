@@ -1,10 +1,15 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <title>Bars N Beaches</title>
   </head>
   <body style="margin:1rem; padding:1rem">
+
+  <div id="nav-bar"></div>
+
     <main role="main" class="container">
       <form method="POST" action="/registration" th:object="${userForm}" class="form-signin">
         <h2 class="form-signin-heading">Create your account</h2>
@@ -21,7 +26,7 @@
         </div>
         <br>
         <div>
-          <label>Are You a Bar Owner?</label>
+          <label>Are you a Bar owner?</label>
           <select typeof="text" name="isBarOwner" th:value="*{isBarOwner}" class="form-control">
             <option>Yes</option>
             <option>No</option>

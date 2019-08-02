@@ -4,6 +4,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: rgba(95, 92, 92, 0.486);
+
     .imageContainer {
         margin-left: 15px;
         border: solid 5px orange;
@@ -18,13 +20,14 @@ nav {
     .linksContainer {
         & a {
             text-decoration: none;
-            background-color: forestgreen;
             color:white;
             padding: 10px;
             margin-right: 10px;
             border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
             &:hover{
-                background-color: lighten(forestgreen, 20%);
+                background-color: forestgreen;
             }
         }
     }

@@ -57,5 +57,4 @@ public class BarsRestController {
     Bar bar = barRepo.findById(id).orElseThrow(() -> new BarObjectNotFoundException());
     barRepo.delete(bar);
   }
-
 }

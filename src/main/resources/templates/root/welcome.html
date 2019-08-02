@@ -1,18 +1,20 @@
 <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org"
-      th:replace="~{fragments/layout :: layout (~{::body})}">
-  <head>
-    <title>Bars N Beaches</title>
-  </head>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body})}">
 
-  <body style="margin:1rem; padding:1rem">
-    <main role="main" class="container">
-      <h2 class="text-center" th:text="'Welcome '+${currentUser.username}">Success!</h2>
-      <br>
-      <div class="text-center"><img th:src="${currentUser.userPic}" alt="avatar pic" height="100" width="100"></div>
-    </main>
+<head>
+  <title>Bars N Beaches</title>
+</head>
+
+<body style="margin:1rem; padding:1rem">
+  <div id="nav-bar"></div>
+
+  <main role="main" class="container">
+    <h2 class="text-center" th:text="'Welcome '+${currentUser.username}">Success!</h2>
     <br>
-    <br>
+    <div class="text-center"><img th:src="${currentUser.userPic}" alt="avatar pic" height="100" width="100"></div>
+  </main>
+  <br>
+  <br>
 
     <div class="container">
       <div class="row">
@@ -28,9 +30,9 @@
       </div>
     </div>
 
-    <hr style="border-top: 2px solid maroon">
+  <hr style="border-top: 2px solid maroon">
 
-    <div id="bar-index-currentUser"></div>
-  </body>
+  <div id="bar-index-currentUser"></div>
+</body>
 
 </html>
