@@ -45,12 +45,14 @@ class BarIndexCurrentUserContainer extends Component {
               </div>
             )
           })
-    
+
         return(
+          <div>
             <div>
                 <h3 className="text-center">Bars I've reviewed</h3>
-                <div>{barsArray}</div>              
+                <div>{barsArray}</div>
             </div>
+          </div>
         )
     }
 }

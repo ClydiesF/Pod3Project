@@ -42,6 +42,12 @@ class BarShowContainer extends Component {
   }
 
   render() {
+    let barImage = this.state.bar.barPic
+    console.log(barImage)
+    if(barImage == "") {
+      barImage = "https://i.ytimg.com/vi/LObpA84ddL0/hqdefault.jpg"
+    }
+
     let sortedReviews = this.state.reviews
     sortedReviews.sort((a, b) => (a.reviewDate < b.reviewDate) ? 1 : -1)
 
@@ -60,7 +66,7 @@ class BarShowContainer extends Component {
       return(
         <div className="container">
           <div className="row">
-            <div className="col-md-2 text-center center">    
+            <div className="col-md-2 text-center center">
               <img src={review.reviewerPic} alt="avatar pic" height="60" width="60"/>
               <p>{review.reviewerUsername}</p>
             </div>
@@ -84,7 +90,7 @@ class BarShowContainer extends Component {
           <div className="row">
 
             <div className="col-md-4">
-              <img src={this.state.bar.barPic} alt="Bar ambiance" height="240" width="280"/>
+              <img src={barImage} alt="Bar ambiance" height="240" width="280"/>
             </div>
 
             <div className="col-md-8 pg-vertical-line d-md-flex">
