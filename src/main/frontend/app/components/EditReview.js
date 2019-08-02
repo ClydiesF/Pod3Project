@@ -16,14 +16,14 @@ class EditReview extends Component {
 
     editReview (formPayload) {
         fetch(`/api/v1/reviews/update/${this.state.reviewId}`, {
-        method: 'PUT', 
+        method: 'POST', 
         body: JSON.stringify(formPayload),
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'},
         credentials:"same-origin"       
     })
-    // location.reload()
+    location.reload()
     }
 
     handleRatingInput(event) {
