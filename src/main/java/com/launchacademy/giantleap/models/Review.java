@@ -79,4 +79,8 @@ public class Review {
   public String getBarReviewedLocation(){
     return bar.getLocation();
   }
+
+  public String getBarReviewedPic(){
+    return bar.getBarPic();
+  }
 }

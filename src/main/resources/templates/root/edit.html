@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Bars N Beaches</title>
+  </head>
+
+  <body style="margin:1rem; padding:1rem">
+    <h1>Edit Your Profile</h1>
+    <form action="#" th:action="@{/editProfile}" th:object="${user}" method="POST" class="container">
+      <div>
+        <label>Please provide a profile picture</label>
+        <input type="text" name="userPic" th:value="*{userPic}" class="form-control" placeholder="Enter Image URL to page" />
+      </div>
+      <br>
+      <div>
+        <input class="btn btn-default" type="submit" value="Submit Edits" />
+      </div>
+      <br>
+      <div>
+        <p><a th:href="'/welcome'" class="btn btn-default">Return to Profile</a></p>
+      </div>
+    </form>
+  </body>
+</html>

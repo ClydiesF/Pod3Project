@@ -1,5 +1,6 @@
 package com.launchacademy.giantleap.controllers;
 
+import com.launchacademy.giantleap.models.Bar;
 import com.launchacademy.giantleap.models.User;
 import com.launchacademy.giantleap.repositories.BarRepository;
 import com.launchacademy.giantleap.repositories.UserRepository;
@@ -78,4 +79,11 @@ public class UsersController {
     model.addAttribute("currentUser", loggedUsed);
     return "root/welcome";
   }
+
+  @GetMapping("/editProfile")
+  public String getNew(@ModelAttribute User user, Model model) {
+    model.addAttribute("user", user);
+    return "root/edit";
+  }
+
 }
