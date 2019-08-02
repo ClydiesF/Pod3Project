@@ -71,7 +71,7 @@ public class ReviewsRestController {
     reviewRepo.delete(review);
   }
 
-  @PutMapping("/api/v1/reviews/update/{reviewId}")
+  @PostMapping("/api/v1/reviews/update/{reviewId}")
   public void updateReview(@RequestBody Review updatedReview, @PathVariable Integer reviewId) {
 
     Review review = reviewRepo.findById(reviewId).orElseThrow(() -> new ReviewObjectNotFoundException());
