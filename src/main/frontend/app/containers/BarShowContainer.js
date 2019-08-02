@@ -68,7 +68,7 @@ class BarShowContainer extends Component {
               {displayOptions ? <DeleteReview selectedReview={review}/> : null }
               {displayOptions ? <EditReview selectedReview={review}/> : null } &emsp;&emsp;
               <div className="dateformat"><p><i>{dateFormat}</i></p></div>
-              <p>Rating: {review.rating} / 10</p>
+              <p><strong>Rating: {review.rating} / 10</strong></p>
               <textarea className="form-control" rows="4" cols="85" maxLength="1000" style={{border: `none`, resize: `none`}} readOnly>{review.comment}</textarea>
             </div>
           </div>

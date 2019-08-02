@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -70,35 +71,17 @@ public class ReviewsRestController {
     reviewRepo.delete(review);
   }
 
-  @PostMapping("/api/v1/reviews/update/{reviewId}/{barId}")
-  public Review updateReview(@RequestBody Review updatedReview, @PathVariable Integer reviewId, @PathVariable Integer barId, @AuthenticationPrincipal UserDetails currentUser) {
+  @PutMapping("/api/v1/reviews/update/{reviewId}")
+  public void updateReview(@RequestBody Review updatedReview, @PathVariable Integer reviewId) {
 
     Review review = reviewRepo.findById(reviewId).orElseThrow(() -> new ReviewObjectNotFoundException());
     review.setRating(updatedReview.getRating());
     review.setComment(updatedReview.getComment());
 
-    User user = userRepo.findByUsername(currentUser.getUsername());
-    review.setReviewer(user);
-
-    Bar currentBar = barRepo.findById(barId).get();
-    review.setBar(currentBar);
-
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     LocalDateTime now = LocalDateTime.now();
     review.setReviewDate(now);
 
-    List<Review> reviewListforUser = user.getReviews();
-    reviewListforUser.add(review);
-    user.setReviews(reviewListforUser);
-
-    List<Review> reviewListforBar = currentBar.getReviews();
-    reviewListforBar.add(review);
-    currentBar.setReviews(reviewListforBar);
-
     reviewRepo.save(review);
-    userRepo.save(user);
-    barRepo.save(currentBar);
-
-    return review;
   }
 }
