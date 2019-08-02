@@ -82,6 +82,10 @@ public class BarsController {
       return "bars/new";
     }
 
+    if(bar.getBarPic().trim().equals("")){
+      bar.setBarPic("https://i.ytimg.com/vi/LObpA84ddL0/hqdefault.jpg");
+    }
+
     if (bindingResult.hasErrors()) {
       return "bars/new";
     }else{

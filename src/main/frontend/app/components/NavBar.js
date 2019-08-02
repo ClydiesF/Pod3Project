@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './NavBar.scss'
 
-export default class NavBar extends Component {
+class NavBar extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -13,7 +13,7 @@ export default class NavBar extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:8080/api/v1/currentLoginUser")
+        fetch('/api/v1/currentLoginUser')
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -50,3 +50,4 @@ export default class NavBar extends Component {
         )
     }
 }
+export default NavBar;

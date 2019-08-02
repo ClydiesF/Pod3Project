@@ -13,9 +13,9 @@ const containerMap = {
   "bar-show": BarShowContainer,
   "home-index": HomePageContainer,
   "bar-index-currentUser": BarIndexCurrentUserContainer,
-  "NavBar": NavBar,
-  "navLogin": NavBar,
-  "navRegistration": NavBar
+  "nav-bar": NavBar,
+  // "navLogin": NavBar,
+  // "navRegistration": NavBar
 }
 
 for (const domId in containerMap) {

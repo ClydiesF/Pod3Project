@@ -51,7 +51,7 @@ public class UsersController {
       return "security/registration";
     }
 
-    if(userForm.getUserPic().trim().equals("") || userForm.getUserPic() == null){
+    if(userForm.getUserPic().trim().equals("")){
       userForm.setUserPic("https://cdn1.iconfinder.com/data/icons/ninja-things-1/720/ninja-background-512.png");
     }
 

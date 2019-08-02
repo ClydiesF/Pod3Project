@@ -4,6 +4,7 @@ class EditReview extends Component {
     constructor(props){
         super(props);
         this.state = {
+            reviewId:this.props.selectedReview.id,
             updatedRating:'',
             updatedComment:''
         }
@@ -14,16 +15,15 @@ class EditReview extends Component {
     }
 
     editReview (formPayload) {
-        let selectedReview = this.props.selectedReview
-        fetch(`/api/v1/reviews/update/${selectedReview.id}/${selectedReview.barReviewedId}`, {
-        method: 'POST', 
+        fetch(`/api/v1/reviews/update/${this.state.reviewId}`, {
+        method: 'PUT', 
         body: JSON.stringify(formPayload),
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'},
         credentials:"same-origin"       
     })
-    location.reload()
+    // location.reload()
     }
 
     handleRatingInput(event) {
@@ -59,7 +59,7 @@ class EditReview extends Component {
                         <div className="modal-content">
 
                             <div className="modal-header">
-                                <button type="button" className="close" dataDismiss="modal">&times;</button>
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
                                 <h3 className="modal-title">Edit review</h3>
                             </div>
 

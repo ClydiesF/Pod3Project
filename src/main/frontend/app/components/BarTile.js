@@ -2,24 +2,24 @@ import React from 'react';
 
 const BarTile = (props) => {
   let barImage = props.pic
-  if(barImage == "") {
-    barImage = "https://i.ytimg.com/vi/LObpA84ddL0/hqdefault.jpg"
-  }
 
   return(
     <div>
-        <div className="container">
+      <a href={`/bars/${props.id}`}>
+        <div className="container box1">
             <div className="row">
-                <div className="col-md-2 text-center">
-                    <img src={barImage} alt="Bar pic" height="75" width="150"/>
+                <div className="col-md-7 text-center center">
+                  <p style={{fontSize: `30px`}}>{props.name}</p>
+                  <p>{props.location}</p>
                 </div>
-                <div className="col-md-10 pg-vertical-line">
-                    <p>Name: <a href={`/bars/${props.id}`}>{props.name}</a></p>
-                    <p>Location: {props.location}</p>
+                <div className="col-md-5 center1">
+                  <img src={barImage} alt="Bar pic" height="180" width="100"/>
                 </div>
             </div>
-            <hr></hr>
         </div>
+        </a>
+        <br></br>
+        <br></br>
     </div>
   )
 }
