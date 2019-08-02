@@ -10,22 +10,22 @@ export default class Locations extends Component {
                     <div className="box">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjhR-7RqHBcSkZoeUKauYho7dmSVnQXgXx0TlojptFjR9x5Z3nyw" alt="beach"/>
                         <div className="content">
-                            <h4>The Cape</h4>
-                            <p>Lorem ipsum..</p>
+                            <h4>Cape Cod</h4>
+                            <p>Quaint villages, seafood shacks and lighthouses</p>
                         </div>
                     </div>
                     <div className="box">
-                        <img src="https://static1.squarespace.com/static/5779a864893fc0e70a93592d/t/578846069de4bb14b3998f2c/1468548621000/marthas-vineyard-luxury-hotels.jpg?format=2500w" alt="beach-vineyard"/>
+                        <img src="https://www.mvy.com/uploads/1/0/8/6/108635833/ferry-arrives-in-vineyard-haven_1_orig.jpg" alt="beach-vineyard"/>
                         <div className="content">
                             <h4>Martha's Vineyard</h4>
-                            <p>great for family fun!</p>
+                            <p>Harbor towns, sandy beaches and farmland</p>
                         </div>
                     </div>
                     <div className="box">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX75CqzQui1VUGBBcfnds-6sgEN5yDKC9R0RPgaKPXw47RoxZf" alt="beach-hampton"/>
                         <div className="content">
-                            <h4>Hampton Beach</h4>
-                            <p>Beautiful bars and fun!</p>
+                            <h4>The Hamptons</h4>
+                            <p>Summer destination for fancy New Yorkers</p>
                         </div>
                     </div>
                 </div>
