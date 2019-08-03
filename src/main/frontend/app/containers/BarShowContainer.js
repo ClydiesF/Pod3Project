@@ -43,10 +43,10 @@ class BarShowContainer extends Component {
 
   render() {
     let barImage = this.state.bar.barPic
-    console.log(barImage)
-    if(barImage == "") {
-      barImage = "https://i.ytimg.com/vi/LObpA84ddL0/hqdefault.jpg"
-    }
+    // console.log(barImage)
+    // if(barImage == "") {
+    //   barImage = "https://i.ytimg.com/vi/LObpA84ddL0/hqdefault.jpg"
+    // }
 
     let sortedReviews = this.state.reviews
     sortedReviews.sort((a, b) => (a.reviewDate < b.reviewDate) ? 1 : -1)

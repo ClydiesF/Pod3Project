@@ -21,12 +21,23 @@ class NavBar extends Component {
                     throw new Error('Something went wrong ...');
                 }
             })
-            .then(data => this.setState({
-                btn1: 'Profile',
-                ref1: '/welcome',
-                btn2: 'Log-out',
-                ref2: '/logout'
-            }))
+            .then(data => {
+                if(data.username !== "anonymous"){
+                    this.setState({
+                        btn1: 'Profile',
+                        ref1: '/welcome',
+                        btn2: 'Log-out',
+                        ref2: '/logout'
+                    })
+                } else {
+                    this.setState({
+                        btn1: 'Sign-Up',
+                        ref1: '/registration',
+                        btn2: 'Log-In',
+                        ref2: '/login'
+                    })
+                }
+            })
             .catch(error => this.setState({
                 btn1: 'Sign-Up',
                 ref1: '/registration',
