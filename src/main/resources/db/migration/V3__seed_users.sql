@@ -2,3 +2,4 @@ INSERT INTO users (username, password, is_bar_owner, user_pic) VALUES ('Cameron'
 INSERT INTO users (username, password, is_bar_owner, user_pic) VALUES ('Clyde', 'password2', false, 'https://i.pinimg.com/originals/02/dc/30/02dc3019fb8cc7d02db09ab41a60c4e4.jpg');
 INSERT INTO users (username, password, is_bar_owner, user_pic) VALUES ('Isaac', 'password3', true, 'https://i.pinimg.com/736x/30/e9/b1/30e9b101dd1322a682281581d1fdb134.jpg');
 INSERT INTO users (username, password, is_bar_owner, user_pic) VALUES ('Pascal', 'password4', true, 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/925dac00-20b0-4202-a371-1334fc785846/d7z86pw-e3274435-6c73-4848-bf77-0266fa9ad8b8.jpg');
+INSERT INTO users (username, password, is_bar_owner, user_pic) VALUES ('anonymous', 'anonymous', false, null);

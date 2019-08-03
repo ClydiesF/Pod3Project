@@ -44,7 +44,7 @@ public class UsersRestController {
     @ResponseBody
     @ExceptionHandler(UsersRestController.UserObjectNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String barObjectNotFoundHandler(UsersRestController.UserObjectNotFoundException ex) {
+    String userObjectNotFoundHandler(UsersRestController.UserObjectNotFoundException ex) {
       return ex.getMessage();
     }
   }
@@ -56,7 +56,12 @@ public class UsersRestController {
 
   @GetMapping("/api/v1/currentLoginUser")
   public User currentLoginUser(Model model, @AuthenticationPrincipal UserDetails currentUser) {
-    User currentLoginUser= userRepo.findByUsername(currentUser.getUsername());
-    return currentLoginUser;
+    if(currentUser != null){
+      User currentLoginUser= userRepo.findByUsername(currentUser.getUsername());
+      return currentLoginUser;
+    }else{
+      User anon = userRepo.findByUsername("anonymous");
+      return anon;
+    }
   }
 }
